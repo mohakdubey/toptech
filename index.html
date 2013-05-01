@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>Top tech news</title> 
+    <meta name="viewport" content="initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="jquery.mobile-1.2.0.css" />
+  <script src="jquery-1.8.2.min.js"></script>
+  <script src="jquery.mobile-1.2.0.min.js"></script>
+  <script src="appsrc.js"></script>
+    <script src="local:///chrome/webworks.js" type="text/javascript"></script>
+    <script>
+      function ready() {
+         var ele = document.createElement("div");
+         ele.innerHTML = "uuid: " + blackberry.identity.uuid;
+         document.documentElement.appendChild(ele);
+      }   
+      window.addEventListener("load", function(e) {
+         document.addEventListener("webworksready", ready);
+      }, false);
+   </script>
+  <style>
+  </style>
+</head> 
+<body> 
+
+<div data-role="page" id="home">
+
+  <div data-role="header" data-position="fixed">
+    <h1>Top Tech News</h1>
+  </div><!-- /header -->
+
+     <div data-role="content">   
+
+    <center><img src="logos.svg" height="100" width="100"/></center>
+<p><a href="#title" data-role="button" onclick="loadfeed(this)"id="0">Techcrunch</a></p> 
+<p><a href="#title" data-role="button" onclick="loadfeed(this)" id="1">Engadget</a></p> 
+<p><a href="#title"  data-role="button" onclick="loadfeed(this)" id="2">LifeHacker</a></p>
+<p><a href="#title" data-role="button" onclick="loadfeed(this)"id="3">Gizmodo</a></p> 
+<p><a href="#title" data-role="button" onclick="loadfeed(this)" id="4">Slashdot</a></p> 
+<p><a href="#title"  data-role="button" onclick="loadfeed(this)" id="5">PC World</a></p>  
+<p><a href="#title"  data-role="button" onclick="loadfeed(this)" id="6">CNET</a></p> 
+    <div class="ui-body">
+    </div><!-- /themed container -->
+
+  </div><!-- /content -->
+
+  <div data-role="footer" data-position="fixed">
+
+      <h1>Top Tech News </h1>
+    
+  </div>
+
+</div><!-- /page -->
+
+            <div data-role="page" id="title">
+      <div data-role="header" data-position="fixed">
+        <a href="#home" data-role="button" data-rel="back">Back</a>
+        <h1>Top Tech News</h1>
+      </div>
+      <div data-role="content">
+        <div class="content-primary">
+      <ul data-role="listview" id="titlelist">
+      </ul>
+      </div>
+    </br></br></br></br>
+      </div>
+    </div>
+
+
+      <div data-role="page" id="desc">
+      <div data-role="header" data-position="fixed">
+        <a href="#home" data-role="button" data-rel="back">Back</a>
+        <h1>Top Tech News</h1>
+      </div>
+      <div data-role="content" >
+        <div class="content-primary">
+          
+      <div id="fullpost"></div>
+      </ul>
+      </div>
+      </div>
+    </div>
+    </body>
+    </html>
